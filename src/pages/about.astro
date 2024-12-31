@@ -28,39 +28,55 @@ import Hero from "../components/Hero.astro";
         <h2 class="section-title">Background</h2>
         <div class="content">
           <p>
-            Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a>
-            makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum
-            vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra
-            diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus
-            in ornare.
-          </p>
-          <p>
-            Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget
-            gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat
-            pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh
-            venenatis cras sed felis eget velit. Id diam vel quam elementum
-            pulvinar etiam non.
-          </p>
-          <p>
-            Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut
-            sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor
-            posuere ac ut consequat semper viverra. Viverra accumsan in nisl
-            nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-            pretium fusce.
+            I am a Full Stack Engineer II at Raven Industries with over 3 years
+            of professional software development experience. Specializing in
+            full-stack development, I have demonstrated expertise in building
+            and maintaining enterprise-level applications, particularly in the
+            agricultural technology sector. I have completed a Master's degree
+            in Computer and Information Systems with a specialization in Data
+            Management at Dakota State University. My technical expertise spans
+            both front-end and back-end development, with proficiency in
+            technologies including JavaScript, TypeScript, React, MySQL. In my
+            current role, I lead critical initiatives in API development of
+            hardware and user management systems, while also maintaining and
+            upgrading legacy systems. I have played a key role in the CNHI
+            integration project. Additional experience in construction financial
+            services from my experience at Lien Management Solutions (LMS).
           </p>
         </div>
       </section>
       <section>
         <h2 class="section-title">Education</h2>
         <div class="content">
-          <p>Corporis voluptates tenetur laudantium.</p>
+          <p>
+            Masters of Computer Information Systems - Dakota State University
+            (3.55 GPA)
+          </p>
         </div>
       </section>
       <section>
         <h2 class="section-title">Skills</h2>
         <div class="content">
-          <p>officia unde omnis</p>
+          <ul class="skills-ul">
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React *</li>
+            <li>MySQL</li>
+            <li>REST APIs</li>
+            <li>GraphQL</li>
+            <li>Node.js</li>
+            <li>Nestjs</li>
+            <li>Next.js</li>
+            <li>Astro *</li>
+            <li>Express</li>
+            <li>CI/CD *</li>
+            <li>Kubernetes *</li>
+            <li>Docker *</li>
+            <li>Datadog</li>
+          </ul>
+        </div>
+        <div class="content">
+          <p>* This site is currently using this technology</p>
         </div>
       </section>
     </main>
@@ -123,6 +139,11 @@ import Hero from "../components/Hero.astro";
     section {
       display: contents;
       font-size: var(--text-lg);
+    }
+    .skills-ul {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
     }
   }
 </style>
