@@ -13,6 +13,7 @@ tags:
   - React
   - Nginx
   - Astro
+  - Fluxcd
 ---
 
 ## Marketing Myself
