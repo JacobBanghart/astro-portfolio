@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: astro-portfolio
-          image: registry.gitlab.com/jacobmbanghart/astro-portfolio:0.0.7 # {"$imagepolicy": "flux-system:portfolio"}
+          image: registry.gitlab.com/jacobmbanghart/astro-portfolio:0.0.2 # {"$imagepolicy": "flux-system:portfolio"}
           resources:
             limits:
               memory: "128Mi"
