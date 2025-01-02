@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resource
+spec:
+  selector:
+    matchLabels:
+      app: resource
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: resource
+    spec:
+      containers:
+        - name: resource
+          image: registry.gitlab.com/jacobmbanghart/astro-portfolio:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resource
+spec:
+  selector:
+    app: resource
+  type: ClusterIP
+  ports:
+    - port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: resource
+  labels:
+    name: resource
+spec:
+  rules:
+    - host: www.jacobbanghart.com jacobbanghart.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: resource
+                port:
+                  number: 8080
