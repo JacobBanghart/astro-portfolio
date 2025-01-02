@@ -15,10 +15,9 @@ tag-release:
   script:
     - apk add curl git python3
     - LAST_COMMIT=$(git log -1 --pretty=%B) # Last commit message
-    - LAST_COMMIT=$(git log -1 --pretty=%B) # Last commit message
     - LAST_AUTHOR=$(git log -1 --pretty=%an) # Last commit author
     - |
-      if [[ "$LAST_AUTHOR" == "Flux" ]]; then
+      if [[ "$LAST_AUTHOR" == "fluxcdbot" ]]; then
         echo "Last commit was made by Flux. Skipping deployment to avoid infinite loop."
         exit 0
       fi
