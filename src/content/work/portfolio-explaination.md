@@ -1,7 +1,7 @@
 ---
 title: Portfolio
 publishDate: 2024-12-31 00:00:00
-img: /assets/portfolio.png
+img: /assets/portfolio.webp
 img_alt: An image of the current site
 description: |
   A beautiful portfolio for your eyes to feast on

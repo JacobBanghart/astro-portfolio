@@ -1,7 +1,7 @@
 ---
 title: NIJII Map
 publishDate: 2024-12-31 00:00:00
-img: /assets/nijii.png
+img: /assets/nijii.webp
 img_alt: An image of the NIJII tribes map
 description: |
   A super quick low budget high impact OpenStreetMaps
