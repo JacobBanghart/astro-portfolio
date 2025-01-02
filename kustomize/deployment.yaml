@@ -46,7 +46,7 @@ metadata:
     name: astro-portfolio
 spec:
   rules:
-    - host: astro-portfolio.jacobbanghart.com
+    - host: jacobbanghart.com
       http:
         paths:
           - pathType: Prefix
