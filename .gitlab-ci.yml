@@ -27,7 +27,6 @@ tag-release:
     - echo Pushing new version tag ${NEXT_TAG}
     - curl -k --request POST --header "PRIVATE-TOKEN:${TAG_TOKEN}" --url "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/repository/tags?tag_name=${NEXT_TAG}&ref=main"
     - docker build --pull -t "$DOCKER_IMAGE_NAME" .
-    - docker push "$DOCKER_IMAGE_NAME"
     - |
       if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
         docker tag "$DOCKER_IMAGE_NAME" "$CI_REGISTRY_IMAGE:$NEXT_TAG"
