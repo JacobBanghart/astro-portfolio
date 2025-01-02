@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: resource
+  name: astro-portfolio
 spec:
   selector:
     matchLabels:
-      app: resource
+      app: astro-portfolio
   replicas: 1
   template:
     metadata:
       labels:
-        app: resource
+        app: astro-portfolio
     spec:
       containers:
-        - name: resource
+        - name: astro-portfolio
           image: registry.gitlab.com/jacobmbanghart/astro-portfolio:latest
           resources:
             limits:
@@ -30,10 +30,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: resource
+  name: astro-portfolio
 spec:
   selector:
-    app: resource
+    app: astro-portfolio
   type: ClusterIP
   ports:
     - port: 8080
@@ -41,18 +41,18 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: resource
+  name: astro-portfolio
   labels:
-    name: resource
+    name: astro-portfolio
 spec:
   rules:
-    - host: www.jacobbanghart.com jacobbanghart.com
+    - host: astro-portfolio.jacobbanghart.com
       http:
         paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
-                name: resource
+                name: astro-portfolio
                 port:
                   number: 8080
