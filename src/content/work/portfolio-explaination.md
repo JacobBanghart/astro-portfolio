@@ -14,6 +14,7 @@ tags:
   - Nginx
   - Astro
   - Fluxcd
+  - CI/CD
 ---
 
 ## Marketing Myself
