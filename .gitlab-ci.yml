@@ -15,6 +15,13 @@ tag-release:
   script:
     - apk add curl git python3
     - LAST_COMMIT=$(git log -1 --pretty=%B) # Last commit message
+    - LAST_COMMIT=$(git log -1 --pretty=%B) # Last commit message
+    - LAST_AUTHOR=$(git log -1 --pretty=%an) # Last commit author
+    - |
+      if [[ "$LAST_AUTHOR" == "Flux" ]]; then
+        echo "Last commit was made by Flux. Skipping deployment to avoid infinite loop."
+        exit 0
+      fi
     - LAST_TAG=$(git describe --tags --abbrev=0) # Last tag in the repo
     - NEXT_TAG=$(python3 next_version.py ${LAST_TAG} ${LAST_COMMIT})
     - echo Pushing new version tag ${NEXT_TAG}
