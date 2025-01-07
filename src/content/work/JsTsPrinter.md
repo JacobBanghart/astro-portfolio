@@ -1,6 +1,8 @@
 ---
 title: TS/JS webpage printer
 publishDate: 2024-12-30 00:00:00
+img: /assets/print.webp
+img_alt: An image of the google chrome print to pdf dialog
 description: |
   When complicated problems meets the intersection of low time and budget you have to get creative
 tags:
