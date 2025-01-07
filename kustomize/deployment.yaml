@@ -61,3 +61,22 @@ spec:
                 name: astro-portfolio
                 port:
                   number: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: astro-portfolio-www
+  labels:
+    name: astro-portfolio-www
+spec:
+  rules:
+    - host: www.jacobbanghart.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: astro-portfolio
+                port:
+                  number: 8080
