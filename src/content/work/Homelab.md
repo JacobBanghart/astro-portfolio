@@ -1,7 +1,7 @@
 ---
 title: My Homelab
 publishDate: 2025-01-01 00:00:00
-img: /assets/flux-icon.webp
+img: /assets/traefik-gopher.svg
 img_alt: The flux logo
 description: |
   How did we get here and what is it I am running
