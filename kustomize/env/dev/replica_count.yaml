@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: astro-portfolio
+spec:
+  replicas: 1

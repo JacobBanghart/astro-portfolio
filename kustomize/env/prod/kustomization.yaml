@@ -1,0 +1,14 @@
+namespace: portfolio-prod
+resources:
+  - ./namespace.yaml
+  - ../../application
+  - ./domains.yaml
+nameSuffix: -prod
+transformers:
+  - |-
+    apiVersion: builtin
+    kind: NamespaceTransformer
+    metadata:
+      name: notImportantHere
+      namespace: portfolio-prod
+    unsetOnly: true
