@@ -5,6 +5,7 @@ bases:
   - ./domains.yaml
 patchesStrategicMerge:
   - replica_count.yaml
+nameSuffix: -dev
 transformers:
   - |-
     apiVersion: builtin

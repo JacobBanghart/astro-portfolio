@@ -3,6 +3,7 @@ kind: Kustomization
 bases:
   - ../../application
   - ./domains.yaml
+nameSuffix: -prod
 transformers:
   - |-
     apiVersion: builtin
