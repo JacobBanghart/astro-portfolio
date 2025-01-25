@@ -1,3 +1,4 @@
+namespace: portfolio-dev
 resources:
   - ../../application
   - ./domains.yaml
