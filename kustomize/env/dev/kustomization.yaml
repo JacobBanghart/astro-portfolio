@@ -1,5 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 bases:
   - ../../application
+  - ./domains.yaml
 patchesStrategicMerge:
   - replica_count.yaml
-  - domains.yaml
+transformers:
+  - |-
+    apiVersion: builtin
+    kind: NamespaceTransformer
+    metadata:
+      name: notImportantHere
+      namespace: portfolio-dev
+    unsetOnly: true
