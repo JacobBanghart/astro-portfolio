@@ -1,5 +1,6 @@
 namespace: portfolio-dev
 resources:
+  - ./namespace.yaml
   - ../../application
   - ./domains.yaml
 patches:

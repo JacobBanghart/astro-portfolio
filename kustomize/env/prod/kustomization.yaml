@@ -1,5 +1,6 @@
 namespace: portfolio-prod
 resources:
+  - ./namespace.yaml
   - ../../application
   - ./domains.yaml
 nameSuffix: -prod
