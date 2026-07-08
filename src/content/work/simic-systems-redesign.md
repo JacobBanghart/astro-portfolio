@@ -1,6 +1,6 @@
 ---
 title: "Simic Systems: The Redesign"
-publishDate: 2026-07-08 00:20:00
+publishDate: 2026-07-08 00:00:00
 img: /assets/simic-redesign-home.png
 img_alt: The redesigned Simic Systems homepage with dark teal and obsidian editorial theme
 description: |

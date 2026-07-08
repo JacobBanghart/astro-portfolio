@@ -1,6 +1,6 @@
 ---
 title: Simic Systems
-publishDate: 2026-07-08 00:00:00
+publishDate: 2026-07-08 00:20:00
 img: /assets/simic-home.png
 img_alt: The Simic Systems homepage showing the product grid of sealed Magic The Gathering booster displays
 description: |
