@@ -1,0 +1,55 @@
+# k8s-homelab's Traefik has no built-in ACME (deliberately, see
+# k8s-homelab/docs/decisions.md) -- unlike dev, which applies a
+# certResolver automatically to every route on its websecure entrypoint.
+# TLS here comes from cert-manager's ingress-shim (the annotation below
+# auto-creates a Certificate from this Ingress) instead of an explicit
+# separate Certificate resource, since this Ingress is defined in a
+# shared external repo, not the flux-apps GitOps tree directly.
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: astro-portfolio
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - jacobbanghart.com
+      secretName: astro-portfolio-tls
+  rules:
+    - host: jacobbanghart.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: astro-portfolio
+                port:
+                  number: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: astro-portfolio-www
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - www.jacobbanghart.com
+      secretName: astro-portfolio-www-tls
+  rules:
+    - host: www.jacobbanghart.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: astro-portfolio
+                port:
+                  number: 8080
