@@ -1,0 +1,4 @@
+[tools]
+# Current LTS, as the image uses (node:lts).
+node = "24.21.0"
+pnpm = "10.34.6"
