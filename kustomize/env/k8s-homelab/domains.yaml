@@ -12,6 +12,10 @@ metadata:
   name: astro-portfolio
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+    # Internet-facing: Traefik's default entrypoints are internal-only since
+    # 2026-11-21 (k8s-homelab traefik/release.yaml); `public` is the one WAN
+    # 443 forwards to.
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure,public
 spec:
   ingressClassName: traefik
   tls:
@@ -36,6 +40,10 @@ metadata:
   name: astro-portfolio-www
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+    # Internet-facing: Traefik's default entrypoints are internal-only since
+    # 2026-11-21 (k8s-homelab traefik/release.yaml); `public` is the one WAN
+    # 443 forwards to.
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure,public
 spec:
   ingressClassName: traefik
   tls:
